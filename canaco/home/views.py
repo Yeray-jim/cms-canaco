@@ -8,8 +8,8 @@ def index(request):
 def base(request):
     return render(request, 'home/base.html')
 
-def categorias(request):
-    return render(request, 'home/categorias.html')
+def categoria(request):
+    return render(request, 'home/categoria.html')
 
 def contactanos(request):
     return render(request, 'home/contactanos.html')
