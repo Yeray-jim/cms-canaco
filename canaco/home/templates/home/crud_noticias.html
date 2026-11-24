@@ -43,7 +43,7 @@
           <td>{{ noticia.updatedat|date:"Y-m-d" }}</td>
           <td>{{ noticia.visitas }}</td>
           <td>
-            {% if noticia.publicada %}
+            {% if noticia.estado == 'publicado' %}
             <span class="badge bg-success">Publicado</span>
             {% else %}
             <span class="badge bg-warning text-dark">Borrador</span>
@@ -67,7 +67,7 @@
             <a
               href="{% url 'home:publicar_publicacion' noticia.id %}"
               class="btn btn-success btn-sm"
-              >{% if noticia.publicada %}Ocultar{% else %}Publicar{% endif %}</a
+              >{% if noticia.estado == 'publicado' %}Ocultar{% else %}Publicar{% endif %}</a
             >
           </td>
           <td>

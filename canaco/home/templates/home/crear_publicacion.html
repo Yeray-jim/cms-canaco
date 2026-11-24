@@ -49,15 +49,7 @@ publicacion.titulo|default:'' }}"
           {% for categoria in categorias %}
           <option
             value="{{ categoria.id }}"
-            {%
-            if
-            publicacion
-            and
-            publicacion.categoria_id=""
-            ="categoria.id"
-            %}selected{%
-            endif
-            %}
+            {% if publicacion and publicacion.categoria_id == categoria.id %}selected{% endif %}
           >
             {{ categoria.nombre }}
           </option>
@@ -69,29 +61,13 @@ publicacion.titulo|default:'' }}"
         <select class="form-control" id="estado" name="estado">
           <option
             value="borrador"
-            {%
-            if
-            publicacion
-            and
-            publicacion.estado=""
-            ="borrador"
-            %}selected{%
-            endif
-            %}
+            {% if publicacion and publicacion.estado == 'borrador' %}selected{% endif %}
           >
             Borrador
           </option>
           <option
             value="publicado"
-            {%
-            if
-            publicacion
-            and
-            publicacion.estado=""
-            ="publicado"
-            %}selected{%
-            endif
-            %}
+            {% if publicacion and publicacion.estado == 'publicado' %}selected{% endif %}
           >
             Publicado
           </option>

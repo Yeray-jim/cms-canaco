@@ -59,7 +59,8 @@
                         {% else %} 
                         <span class="badge bg-danger">Bloqueado</span> 
                         {% endif %} 
-                    </td> 
+                    </td>
+                    {% comment %}
                     <td> 
                         <a href="{% url 'home:editar_usuario' user.id %}" class="btn btn-info btn-sm">Editar</a> 
                     </td> 
@@ -73,7 +74,8 @@
                             {% csrf_token %} 
                             <button type="submit" class="btn btn-danger btn-sm">Eliminar</button> 
                         </form> 
-                    </td> 
+                    </td>
+                    {% endcomment %}
                 </tr> 
                 {% empty %} 
                 <tr> 

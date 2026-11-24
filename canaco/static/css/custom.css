@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Canaco - Tema "Editorial clásico" (azul marino + rojo prensa)
+   Override cargado DESPUÉS de style.css para ganar la cascada.
+   ========================================================================== */
+
+:root {
+  --bs-primary: #1d3557;
+  --bs-primary-rgb: 29, 53, 87;
+  --bs-secondary: #5c6b7a;
+  --bs-secondary-rgb: 92, 107, 122;
+  --bs-link-color: #1d3557;
+  --bs-link-hover-color: #16324f;
+}
+
+/* ---------- Barra de navegación ---------- */
+.site-nav {
+  background-color: #1d3557;
+}
+
+.site-nav .site-navigation .site-menu > li > a {
+  transition: color 0.2s ease;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #1d3557;
+}
+
+.site-footer .social li a,
+.site-footer .social li a:hover {
+  color: #1d3557;
+}
+
+/* ---------- Panel lateral (sidebar) ---------- */
+.panel-nav-link {
+  color: #1d3557;
+  border-radius: 0.75rem !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.panel-nav-link:hover,
+.panel-nav-link:focus {
+  color: #1d3557;
+  background: #e8eef2;
+}
+
+.panel-nav-link.active {
+  background: #1d3557 !important;
+  box-shadow: inset 4px 0 0 #e63946;
+}
+
+.panel-logout-button {
+  border-radius: 50rem !important;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  border-radius: 50rem;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary,
+.btn.btn-primary {
+  color: #fff;
+  background-color: #1d3557;
+  border-color: #1d3557;
+}
+
+.btn-primary:hover,
+.btn.btn-primary:hover,
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-check:active + .btn-primary,
+.btn-primary:active,
+.btn-primary.active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #16324f;
+  border-color: #16324f;
+}
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus,
+.btn-check:checked + .btn-primary:focus,
+.btn-check:active + .btn-primary:focus,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.35);
+}
+
+.btn-outline-primary,
+.btn.btn-outline-primary {
+  color: #1d3557;
+  border-color: #1d3557;
+}
+
+.btn-outline-primary:hover,
+.btn.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #1d3557;
+  border-color: #1d3557;
+}
+
+.btn-outline-white-reverse,
+.btn.btn-outline-white-reverse {
+  color: #1d3557;
+}
+
+/* ---------- Formularios / tarjetas ---------- */
+.user-form-card {
+  background: #1d3557;
+  border-color: #16324f;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.table {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #1d3557;
+  box-shadow: 0 0 0 0.25rem rgba(29, 53, 87, 0.15);
+}
+
+/* ---------- Accesibilidad / foco ---------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #e63946;
+  outline-offset: 2px;
+}

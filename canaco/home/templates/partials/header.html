@@ -26,13 +26,24 @@
           >
             <li class="active"><a href="{% url 'home:index' %}">Inicio</a></li>
             <li class="has-children">
-              <a href="#">Categoría</a>
+              <a href="{% url 'home:categoria' %}">Categoría</a>
               <ul class="dropdown">
-                <li><a href="">Todas</a></li>
-                <li><a href="{% url 'home:categoria' %}">Tecnologia</a></li>
+                <li><a href="{% url 'home:categoria' %}">Todas</a></li>
+                {% for categoria in global_categorias %}
+                <li>
+                  <a href="{% url 'home:categoria_detalle' categoria.id %}"
+                    >{{ categoria.nombre }}</a
+                  >
+                </li>
+                {% endfor %}
               </ul>
             </li>
             <li><a href="{% url 'home:perfil' %}">Perfil</a></li>
+            {% if request.user.is_staff %}
+            <li><a href="{% url 'home:crud_noticias' %}">Noticias</a></li>
+            <li><a href="{% url 'home:crud_comentarios' %}">Comentarios</a></li>
+            <li><a href="{% url 'home:crud_categorias' %}">Categorías</a></li>
+            {% endif %}
           </ul>
         </div>
 
@@ -48,7 +59,8 @@
             class="d-none d-lg-flex align-items-center justify-content-end gap-2"
           >
             <a href="" class="text-white"></a>
-            <form method="post" action="">
+            <form method="post" action="{% url 'home:logout' %}">
+              {% csrf_token %}
               <button type="submit" class="btn btn-sm btn-outline-light">
                 Cerrar sesión
               </button>
